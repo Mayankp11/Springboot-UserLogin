@@ -53,11 +53,11 @@ public class LoginController {
 
 		return "loginForm";
 	}
-	
+
 	@GetMapping("/logout")
 	public String logout(HttpSession httpSession) {
-		httpSession.invalidate(); //clear all session attributes
-		return"redirect:/login";
+		httpSession.invalidate(); // clear all session attributes
+		return "redirect:/login";
 	}
 
 }
