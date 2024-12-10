@@ -14,9 +14,12 @@
 </head>
 <body>
     <div class="welcome-container">
-        <h1>Welcome to the Application!</h1> 
+        <h1>Welcome, <span th:text="${firstName}"></span>!</h1>
         <br>
-		<a th:href="@{/login/logout}">Logout</a>
-	</div>
+        <!-- Logout form -->
+        <form action="/login/logout" method="get">
+            <button type="submit">Logout</button>
+        </form>
+    </div>
 </body>
 </html>

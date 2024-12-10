@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.techsorcerer.userLogin.exceptions.AuthenticationFailedException;
@@ -20,7 +19,6 @@ import jakarta.validation.Valid;
 
 @Controller
 @RequestMapping("/login")
-@SessionAttributes("username")
 public class LoginController {
 
 	@Autowired
