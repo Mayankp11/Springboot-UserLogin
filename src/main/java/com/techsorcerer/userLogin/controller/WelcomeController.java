@@ -14,7 +14,7 @@ import jakarta.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("/welcome")
-public class WelcomeController {
+public class WelcomeController { 
 
 	@Autowired
 	UserRepository userRepository;
@@ -32,6 +32,9 @@ public class WelcomeController {
 			return "redirect:/login";
 		}
 
+		// You don’t need to use new because the findByUsername() method automatically queries the database, and Spring Data JPA will handle the creation of the UserEntity object.
+		// JpaRepository methods like findByUsername(), the entity is retrieved from the database as a persistent object.
+		//The object you receive is not a new object (in the sense that it wasn’t created manually with new), but it’s the same object that’s persisted in the database.
 		UserEntity userEntity = userRepository.findByUsername(username);
 
 		if (userEntity != null) {
